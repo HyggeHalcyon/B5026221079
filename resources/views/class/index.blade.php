@@ -1,4 +1,4 @@
-@extends('class/master')
+@extends('class/navbar')
 
 @section('title', 'Data Pegawai')
 
@@ -32,6 +32,7 @@
 			<td>{{ $p->pegawai_umur }}</td>
 			<td>{{ $p->pegawai_alamat }}</td>
 			<td>
+				<a href="/class/pegawai/view/{{ $p->pegawai_id }}" class="btn btn-primary">View</a>
 				<a href="/class/pegawai/edit/{{ $p->pegawai_id }}" class="btn btn-success">Edit</a>
 				<a href="/class/pegawai/hapus/{{ $p->pegawai_id }}" class="btn btn-danger">Hapus</a>
 			</td>

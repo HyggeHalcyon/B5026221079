@@ -33,6 +33,10 @@ Route::prefix('tasks')->group(function () {
     Route::get('/validasi', function () { return view('tasks/workstation/validasi'); });
 });
 
+Route::get('/pegawai', function () { 
+    return redirect('/class/pegawai'); 
+});
+
 Route::prefix('class')->group(function () {
     Route::get('perkalian', 'App\Http\Controllers\DosenController@index' );
     Route::get('biodata', 'App\Http\Controllers\DosenController@biodata' );
@@ -47,4 +51,5 @@ Route::prefix('class')->group(function () {
     Route::post('/pegawai/update','App\Http\Controllers\PegawaiController@update');
     Route::get('/pegawai/hapus/{id}','App\Http\Controllers\PegawaiController@hapus');
     Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
+    Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
 });

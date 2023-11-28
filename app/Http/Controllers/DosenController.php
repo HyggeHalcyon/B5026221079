@@ -18,7 +18,7 @@ class DosenController extends Controller
         $nama = "Diki Alfarabii Hadi";
         $alamat = "Surabaya";
         $umur = 18;
-        return view('biodata', ['nama' => $nama, 'alamat' => $alamat, 'umur' => $umur]);
+        return view('class/biodata', ['nama' => $nama, 'alamat' => $alamat, 'umur' => $umur]);
     }
 
     public function showjam($jam){
@@ -26,7 +26,7 @@ class DosenController extends Controller
     }
     public function formulir(){
 
-    	return view('formulir');
+    	return view('class/formulir');
     }
 
     public function proses(Request $request){
