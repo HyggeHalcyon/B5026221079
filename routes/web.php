@@ -53,3 +53,14 @@ Route::prefix('class')->group(function () {
     Route::get('/pegawai/cari','App\Http\Controllers\PegawaiController@cari');
     Route::get('/pegawai/view/{id}','App\Http\Controllers\PegawaiController@view');
 });
+
+Route::prefix('EAS2022')->group(function (){
+    Route::get('/index', 'App\Http\Controllers\EAS2022Controller@index');
+    Route::get('/tambah', 'App\Http\Controllers\EAS2022Controller@tambah');
+    Route::post('/store', 'App\Http\Controllers\EAS2022Controller@store');
+});
+
+Route::prefix('preEAS')->group(function () {
+    Route::get('/index', 'App\Http\Controllers\PreEASController@index');
+    Route::get('/tambah', 'App\Http\Controllers\PreEASController@tambah');
+});
