@@ -11,47 +11,38 @@
 	<br/>
 	<br/>
 
-	<div class="row">
-		<div class="col-4">
-			<form action="/class/pegawai/store" method="post" class="form-horizontal">
-				{{ csrf_field() }}
-				<div class="form-group row">
-					<label for="nama" class="col-md-2 col-form-label mr-2">Nama</label>
-					<div class="col-md-10">
-						<input type="text" class="form-control" id="nama" name="nama">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="jabatan" class="col-md-2 col-form-label mr-2">Jabatan</label>
-					<div class="col-md-10">
-						<input type="text" class="form-control" id="jabatan" name="jabatan">
-					</div>
-				</div>
-				<div class="form-group row">
-					<label for="umur" class="col-md-2 col-form-label mr-2">Umur</label>
-					<div class="col-md-10">
-						<input type="text" class="form-control" id="umur" name="umur">
-					</div>
-				</div>
+	<div class="container">
+        <form action="/class/pegawai/store" method="post" class="form-horizontal">
+            {{ csrf_field() }}
+            <div class="form-group row">
+                <label for="nama" class="col-sm-2 col-form-label text-center">Nama</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="nama" name="nama" placeholder="Johan Ronald">
+                </div>
+            </div>
+			<div class="form-group row">
+                <label for="jabatan" class="col-sm-2 col-form-label text-center">Jabatan</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="jabatan" name="jabatan" placeholder="Staff">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="umur" class="col-sm-2 col-form-label text-center">Umur</label>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="umur" name="umur" placeholder="21">
+                </div>
+            </div>
+			<div class="form-group row">
+                <label for="alamat" class="col-sm-2 col-form-label text-center">Alamat</label>
+                <div class="col-sm-2">
+                    <textarea  type="text" class="form-control" id="alamat" name="alamat" placeholder="Jl. Panglateh">
+					</textarea>
+                </div>
+            </div>
 
-				<div class="form-group row">
-					<label for="alamat" class="col-md-2 col-form-label mr-2">Alamat</label>
-					<div class="col-md-10">
-						<input type="text" class="form-control" id="alamat" name="alamat">
-					</div>
-				</div>
-				<input type="submit" value="Simpan Data" class="btn btn-primary mt-2">
-			</form>
-		</div>
-	</div>
-
-	<!-- <form action="/class/pegawai/store" method="post">
-		{{ csrf_field() }}
-		Nama <input type="text" name="nama"> <br/>
-		Jabatan <input type="text" name="jabatan"> <br/>
-		Umur <input type="number" name="umur"> <br/>
-		Alamat <textarea name="alamat"></textarea> <br/>
-		<input type="submit" value="Simpan Data">
-	</form> -->
-
+            <div class="col-sm-4 text-right">
+                <input type="submit" value="Tambah Data" class="btn btn-primary mt-3">
+            </div>
+        </form>
+    </div>
 @endsection

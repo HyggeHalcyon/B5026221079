@@ -7,6 +7,7 @@
     <br/>
 
     <div class="container">
+        <a href="/EAS2022/tambah" class="btn btn-primary">Tambah Data</a>
         <table class="table table-striped table-hover">
             <tr>
                 <th>ID</th>
@@ -27,6 +28,5 @@
             </tr>
             @endforeach
         </table>
-        <a href="/EAS2022/tambah" class="btn btn-primary">Tambah Data</a>
     </div>
 @endsection

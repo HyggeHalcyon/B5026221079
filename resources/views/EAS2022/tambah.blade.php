@@ -6,33 +6,43 @@
 
     <br/>
 
-    <div class="row">
-        <div class="col-4">
-            <form action="/EAS2022/store" method="post" class="form-horizontal">
-                {{ csrf_field() }}
-                <div class="form-group row">
-                    <label for="nama" class="col-sm-2 col-form-label mr-2">NRP</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="NRP" name="NRP">
-                    </div>
+    <div class="container">
+        <form action="/EAS2022/store" method="post" class="form-horizontal">
+            {{ csrf_field() }}
+            <div class="form-group row mx-auto">
+                <div class="col-sm-4">
                 </div>
-
-                <div class="form-group row">
-                    <label for="jabatan" class="col-md-2 col-form-label mr-2">NilaiAngka</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" id="NilaiAngka" name="NilaiAngka">
-                    </div>
+                <label for="NRP" class="col-sm-2 col-form-label text-center">NRP</label>
+                <div class="col-sm-2">
+                    <input type="text" class="form-control" id="NRP" name="NRP" placeholder="5026221001">
                 </div>
-
-                <div class="form-group row">
-                    <label for="umur" class="col-md-2 col-form-label mr-2">SKS</label>
-                    <div class="col-md-10">
-                        <input type="text" class="form-control" id="SKS" name="SKS">
-                    </div>
+                <div class="col-sm-4">
                 </div>
+            </div>
+            <div class="form-group row mx-auto">
+                <div class="col-sm-4">
+                </div>
+                <label for="NilaiAngka" class="col-sm-2 col-form-label text-center">Nilai</label>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="NilaiAngka" name="NilaiAngka" placeholder="95">
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
+            <div class="form-group row mx-auto mt-3">
+                <div class="col-sm-4">
+                </div>
+                <label for="SKS" class="col-sm-2 col-form-label text-center">SKS</label>
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="SKS" name="SKS" placeholder="18">
+                </div>
+                <div class="col-sm-4">
+                </div>
+            </div>
 
-                <input type="submit" value="Simpan Data" class="btn btn-primary mt-2">
-            </form>
-        </div>
+            <div class="col text-center">
+                <input type="submit" value="Tambah Data" class="btn btn-primary mt-3">
+            </div>
+        </form>
     </div>
 @endsection
