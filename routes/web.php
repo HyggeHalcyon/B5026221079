@@ -60,7 +60,8 @@ Route::prefix('EAS2022')->group(function (){
     Route::post('/store', 'App\Http\Controllers\EAS2022Controller@store');
 });
 
-Route::prefix('preEAS')->group(function () {
-    Route::get('/index', 'App\Http\Controllers\PreEASController@index');
-    Route::get('/tambah', 'App\Http\Controllers\PreEASController@tambah');
+Route::prefix('bolpen')->group(function () {
+    Route::get('/index', 'App\Http\Controllers\BolpenController@index');
+    Route::get('/tambah', 'App\Http\Controllers\BolpenController@tambah');
+    Route::post('/store', 'App\Http\Controllers\BolpenController@store');
 });

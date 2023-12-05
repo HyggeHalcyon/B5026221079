@@ -1,7 +1,7 @@
 @extends('EAS2022/layout')
 
 @section('content')
-    <h3 class="text-center">GET ALL</h3>
+    <h3 class="text-center">CREATE</h3>
     <h3 class="text-center">Nilai Kuliah</h3>
 
     <br/>
