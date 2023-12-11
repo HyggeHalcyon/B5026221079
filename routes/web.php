@@ -33,11 +33,11 @@ Route::prefix('tasks')->group(function () {
     Route::get('/validasi', function () { return view('tasks/workstation/validasi'); });
 });
 
-Route::get('/pegawai', function () { 
+Route::get('/pegawai', function (){ 
     return redirect('/class/pegawai'); 
 });
 
-Route::prefix('class')->group(function () {
+Route::prefix('class')->group(function (){
     Route::get('perkalian', 'App\Http\Controllers\DosenController@index' );
     Route::get('biodata', 'App\Http\Controllers\DosenController@biodata' );
     Route::get('showjam/{jam}', 'App\Http\Controllers\DosenController@showjam' );
@@ -60,8 +60,20 @@ Route::prefix('EAS2022')->group(function (){
     Route::post('/store', 'App\Http\Controllers\EAS2022Controller@store');
 });
 
-Route::prefix('bolpen')->group(function () {
-    Route::get('/index', 'App\Http\Controllers\BolpenController@index');
+Route::prefix('bolpen')->group(function (){
+    Route::get('/', 'App\Http\Controllers\BolpenController@index');
     Route::get('/tambah', 'App\Http\Controllers\BolpenController@tambah');
     Route::post('/store', 'App\Http\Controllers\BolpenController@store');
+    Route::get('/edit/{id}', 'App\Http\Controllers\BolpenController@edit');
+    Route::post('/update', 'App\Http\Controllers\BolpenController@update');
+    Route::get('/hapus/{id}', 'App\Http\Controllers\BolpenController@hapus');
+    Route::get('/cari', 'App\Http\Controllers\BolpenController@cari');
+    Route::get('/view/{id}', 'App\Http\Controllers\BolpenController@view');
+});
+
+Route::prefix('mahasiswa')->group(function (){
+    Route::get('/', 'App\Http\Controllers\MahasiswaController@index');
+    Route::get('/edit/{NRP}', 'App\Http\Controllers\MahasiswaController@edit');
+    Route::get('/view/{NRP}', 'App\Http\Controllers\MahasiswaController@view');
+    Route::post('/update', 'App\Http\Controllers\MahasiswaController@update');
 });
