@@ -19,7 +19,15 @@ class BolpenController extends Controller
 	public function index()	{
 		$data = DB::table('bolpen')
 					->orderBy('kodebolpen', 'asc')
-					->get();
+					->paginate(7);
+		
+		foreach ($data as $key => $value) {
+			if ($value->tersedia == 'Y') {
+				$value->tersedia = 'Tersedia';
+			} else {
+				$value->tersedia = 'Tidak Tersedia';
+			}
+		}
 
 		return view('bolpen/index', ['data' => $data]);
 	}
@@ -42,6 +50,70 @@ class BolpenController extends Controller
 			'tersedia' => $request->tersedia
 		]);
 
-		return redirect('/bolpen/index');
+		return redirect('/bolpen');
+	}
+
+	public function edit($id) {
+		$data = DB::table('bolpen')
+					->where('kodebolpen', $id)
+					->get();
+
+		if ($data[0]->tersedia == 'Y') {
+			$data[0]->tersedia = 'yes';
+		} else {
+			$data[0]->tersedia = '';
+		}
+
+		return view('bolpen/edit', ['data' => $data]);
+	}
+
+	public function update(Request $request){
+		DB::table('bolpen')->where('kodebolpen', $request->kodebolpen)->update([
+			'merkbolpen' => $request->merkbolpen,
+			'stockbolpen' => $request->stockbolpen,
+			'tersedia' => $request->tersedia
+		]);
+
+		return redirect('/bolpen');
+	}
+
+	public function hapus($id){
+		DB::table('bolpen')->where('kodebolpen', $id)->delete();
+
+		return redirect('/bolpen');
+	}
+
+	public function cari(Request $request){
+		$cari = $request->cari;
+
+		$data = DB::table('bolpen')
+					->where('merkbolpen', 'like', "%".$cari."%")
+					->paginate();
+
+		foreach ($data as $key => $value) {
+			if ($value->tersedia == 'Y') {
+				$value->tersedia = 'Tersedia';
+			} else {
+				$value->tersedia = 'Tidak Tersedia';
+			}
+		}
+
+		return view('bolpen/index', ['data' => $data]);
+	}
+
+	public function view($id){
+		$data = DB::table('bolpen')
+					->where('kodebolpen', $id)
+					->get();
+
+		foreach ($data as $key => $value) {
+			if ($value->tersedia == 'Y') {
+				$value->tersedia = 'Tersedia';
+			} else {
+				$value->tersedia = 'Tidak Tersedia';
+			}
+		}
+
+		return view('bolpen/view', ['data' => $data]);
 	}
 } 

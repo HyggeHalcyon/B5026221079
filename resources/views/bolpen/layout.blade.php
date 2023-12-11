@@ -12,11 +12,8 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="{{ url('/bolpen/index') }}">Muhammad Fawwaz Razani - B5026221079</a>
+            <a class="navbar-brand" href="{{ url('/bolpen') }}">Muhammad Fawwaz Razani - B5026221079</a>
             <ul class="navbar-nav">
-                <li class="nav-item">
-                <a class="nav-link" href="{{ url('/bolpen/index') }}">Index</a>
-                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="{{ url('/bolpen/tambah') }}">Tambah</a>
                 </li>
